@@ -1663,11 +1663,7 @@
         .materi-title { font-size: 1.3em; font-weight: bold; color: #fff; }
         .materi-subtitle { font-size: 0.78em; color: rgba(255,255,255,0.65); }
         .materi-header-right { display: flex; align-items: center; gap: 10px; }
-        .materi-score-badge {
-            background: linear-gradient(135deg,#f6d365,#fda085); color: #5c2e00;
-            border-radius: 20px; padding: 7px 16px; font-size: 0.85em; font-weight: bold;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2); white-space: nowrap;
-        }
+
         .btn-materi-close {
             background: rgba(244,67,54,0.85); color: #fff;
             border: 1px solid rgba(255,255,255,0.3); border-radius: 10px;
@@ -1757,32 +1753,8 @@
         }
         .materi-checklist-item.checked .materi-checklist-box { background: #43e97b; border-color: #43e97b; color: #0a3d1f; }
 
-        /* Quiz */
-        .materi-quiz-card {
-            background: rgba(255,255,255,0.13); border-radius: 16px; padding: 16px 18px; margin-bottom: 14px;
-            border-left: 5px solid #4338ca;
-        }
-        .materi-quiz-q { font-size: 0.9em; font-weight: bold; color: #fff; margin-bottom: 10px; line-height: 1.6; }
-        .materi-quiz-options { display: flex; flex-direction: column; gap: 8px; }
-        .materi-quiz-option {
-            text-align: left; padding: 10px 14px; border-radius: 10px; cursor: pointer;
-            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.9); font-size: 0.84em; transition: all 0.15s;
-        }
-        .materi-quiz-option:hover:not(.disabled) { background: rgba(255,255,255,0.22); transform: none; box-shadow: none; }
-        .materi-quiz-option.correct { background: rgba(67,233,123,0.35); border-color: #43e97b; color: #fff; font-weight: bold; }
-        .materi-quiz-option.wrong { background: rgba(244,67,54,0.35); border-color: #f44336; color: #fff; }
-        .materi-quiz-option.disabled { cursor: default; opacity: 0.85; }
-        .materi-quiz-feedback { margin-top: 8px; font-size: 0.8em; font-weight: bold; }
-        .materi-quiz-feedback.correct { color: #b6ffd4; }
-        .materi-quiz-feedback.wrong { color: #ffb3ab; }
 
-        .materi-progress-wrap { margin: 18px 0; }
-        .materi-progress-bar-bg { background: rgba(255,255,255,0.18); border-radius: 8px; height: 10px; overflow: hidden; }
-        .materi-progress-bar-fill { background: linear-gradient(135deg,#f6d365,#fda085); height: 100%; width: 0%; transition: width 0.3s ease; }
-        .materi-progress-label { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 5px; text-align: right; }
 
-        .materi-reflect-q { font-size: 0.86em; font-weight: bold; color: #fff; margin-bottom: 6px; }
         .materi-reflect-textarea {
             width: 100%; min-height: 60px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25);
             background: rgba(255,255,255,0.1); color: #fff; padding: 10px 12px; font-size: 0.85em;
@@ -1791,17 +1763,7 @@
         .materi-reflect-textarea::placeholder { color: rgba(255,255,255,0.4); }
         .materi-reflect-textarea:focus { outline: none; border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15); }
 
-        .materi-final-card {
-            text-align: center; background: rgba(255,255,255,0.15); border-radius: 16px;
-            padding: 22px; margin-bottom: 18px;
-        }
-        .materi-final-score { font-size: 2.2em; font-weight: bold; color: #fff; }
-        .materi-final-label { font-size: 0.85em; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
-        .btn-materi-reset {
-            background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 10px; padding: 9px 18px; font-size: 0.85em; font-weight: bold; cursor: pointer;
-        }
-        .btn-materi-reset:hover { background: rgba(255,255,255,0.28); transform: none; box-shadow: none; }
+
         @media (max-width: 560px) {
             .materi-tab { min-width: 90px; font-size: 0.78em; padding: 10px 6px; }
             .materi-title { font-size: 1.1em; }
@@ -3969,7 +3931,7 @@
             <p class="pre-loading-subtitle">Kenali budaya Indonesia melalui permainan kartu!</p>
             <div class="pre-loading-spinner" id="pre-loading-spinner"></div>
             <p class="pre-loading-info" id="pre-loading-info">Memuat aset...</p>
-            <button class="btn-play" id="btn-play" onclick="playSound('button');handlePlayButton()">▶ PLAY</button>
+            <button class="btn-play" id="btn-play" onclick="playSound('button');handlePlayButton()">▶ Main</button>
             <p id="btn-play-rejoin-hint" style="display:none;color:#ffe080;font-size:1em;margin-top:8px;text-shadow:0 2px 8px rgba(0,0,0,0.7);animation:fadeInOut 2s ease-in-out infinite;">⚔️ Kembali ke pertandingan aktif...</p>
         </div>
     </div>
@@ -4348,8 +4310,8 @@
                     <div class="enc-rule-heading">Tips Jago Main!</div>
                     <div class="enc-rule-text">
                         <ul style="padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;">
-                            <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span><strong>Utamakan buang kartu kekuatan kecil di awal game</strong>, simpan kartu kekuatan besar untuk late game!</span></li>
-                            <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span>Di late game, kartu kekuatan besar memberi keunggulan ganda: lebih sering jadi yang mulai ronde <em>dan</em> kartumu lebih cepat habis.</span></li>
+                            <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span><strong>Utamakan buang kartu kekuatan kecil di awal permainan</strong>, simpan kartu kekuatan besar untuk akhir permainan!</span></li>
+                            <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span>Di akhir permainan, kartu kekuatan besar memberi keunggulan ganda: lebih sering jadi yang mulai ronde <em>dan</em> kartumu lebih cepat habis.</span></li>
                             <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span>Kalau Ambil Kartu dari meja, pilih kartu dengan <strong>kekuatan paling tinggi</strong> agar manfaatnya maksimal.</span></li>
                             <li style="display:flex;gap:8px;align-items:flex-start;">✅ <span>Kalau kamu duluan abis kartunya, kamu menang! 🚀</span></li>
                         </ul>
@@ -4394,7 +4356,6 @@
                 <div class="materi-subtitle">Materi IPAS Kelas V • Bab 7 - Kurikulum Merdeka</div>
             </div>
             <div class="materi-header-right">
-                <div class="materi-score-badge">⭐ Skor Kuis: <span id="materi-score-display">0</span>/15</div>
                 <button class="btn-materi-close" onclick="playSound('x');hideMateriScreen()">✖ Tutup</button>
             </div>
         </div>
@@ -4404,7 +4365,7 @@
             <button class="materi-tab" id="materi-tab-btn-a" onclick="playSound('button');showMateriTab('a')">🏛️ A. Budaya</button>
             <button class="materi-tab" id="materi-tab-btn-b" onclick="playSound('button');showMateriTab('b')">💼 B. Ekonomi</button>
             <button class="materi-tab" id="materi-tab-btn-c" onclick="playSound('button');showMateriTab('c')">🌟 C. Unggulan</button>
-            <button class="materi-tab" id="materi-tab-btn-r" onclick="playSound('button');showMateriTab('r')">📝 Refleksi</button>
+            <button class="materi-tab" id="materi-tab-btn-kuis" onclick="playSound('button');showMateriTab('kuis');initKuis()" style="background:linear-gradient(135deg,rgba(246,211,101,0.35),rgba(253,160,133,0.25));border:1px solid rgba(246,211,101,0.4);">🎯 Kuis</button>
         </div>
 
         <!-- ===================== TAB PENDAHULUAN ===================== -->
@@ -4413,7 +4374,7 @@
                 <div class="materi-intro-card" style="margin-bottom:0;">
                     <div class="materi-intro-heading">🗺️ Tujuan Pembelajaran Bab 7</div>
                     <div class="materi-intro-text">
-                        Indonesia memiliki wilayah yang sangat luas, yaitu 7,81 juta km² yang terbentang dari Sabang sampai Merauke. Wilayah tersebut dihuni 1.340 suku bangsa yang tersebar di 34 provinsi, lengkap dengan keragaman budayanya. Coba perhatikan, ada di bagian manakah tempat tinggalmu sekarang? Berasal dari suku manakah penduduknya? Sudahkah kamu mengetahui keunikan dan keistimewaan yang dimiliki daerahmu? Yuk, kita pelajari bersama lewat 3 topik berikut: <b>(1)</b> mengenal warisan budaya dan sejarahnya, <b>(2)</b> menelaah kondisi & aktivitas ekonomi di sekitar tempat tinggal, dan <b>(3)</b> mengenal produk unggulan daerah.
+                        Indonesia memiliki wilayah yang sangat luas, yaitu 7,81 juta km² yang terbentang dari Sabang sampai Merauke. Wilayah tersebut dihuni 1.340 suku bangsa yang tersebar di 34 provinsi, lengkap dengan keragaman budayanya. Kita akan mempelajari keunikan dan keistimewaan daerah di Indonesia lewat 3 topik berikut: <b>(1)</b> mengenal warisan budaya dan sejarahnya, <b>(2)</b> menelaah kondisi & aktivitas ekonomi di sekitar tempat tinggal, dan <b>(3)</b> mengenal produk unggulan daerah.
                     </div>
                 </div>
             </div>
@@ -4425,24 +4386,12 @@
                 <div class="materi-intro-card">
                     <div class="materi-intro-heading">🏛️ Topik A: Seperti Apakah Budaya Daerahku?</div>
                     <div class="materi-intro-text">
-                        Indonesia terbentang luas dari Sabang sampai Merauke dan dihuni ribuan suku bangsa dengan budaya yang sangat beragam. Sejak dahulu, pelaut Nusantara dan pedagang asing dari Tionghoa, Arab, India, hingga Eropa saling berinteraksi melalui jalur laut, lalu menetap dan membawa budaya mereka. Percampuran dua budaya atau lebih yang saling memengaruhi inilah yang disebut <b>akulturasi</b>.
+                        Indonesia terbentang luas dari Sabang sampai Merauke dan dihuni ribuan suku bangsa dengan budaya yang sangat beragam. Jauh sebelum bangsa asing datang ke Nusantara, masyarakat sudah lebih dahulu mengarungi lautan untuk berdagang dan melakukan kerja sama antarkerajaan. Mereka saling berinteraksi, bahkan ada yang menikah dan menetap di daerah lain.
                     </div>
-                    <div class="materi-essential-box">
-                        <b>🎯 Pertanyaan Esensial:</b><br>
-                        1. Apa saja jenis warisan budaya yang ada di daerahku?<br>
-                        2. Apakah warisan budaya daerahku memiliki sejarah khusus?<br>
-                        3. Adakah budaya daerahku yang merupakan hasil akulturasi?
+                    <div class="materi-intro-text" style="margin-top:10px;">
+                        Hal yang sama terjadi saat pedagang dari Tionghoa, Arab, India, Portugis, Inggris, dan Belanda mulai berdatangan ke Nusantara. Mereka tinggal dan menetap, lalu memperkenalkan budaya dari negara asal. Lambat laun budaya tersebut diterima masyarakat setempat dan membentuk budaya percampuran. Proses percampuran dua budaya atau lebih yang saling memengaruhi inilah yang disebut <b>akulturasi</b>.
                     </div>
                 </div>
-
-                <div class="materi-section-title">🔎 Mari Mencari Tahu: Warisan Budaya Daerahku</div>
-                <div class="materi-essential-box" style="background:rgba(255,255,255,0.08);">
-                    Coba tanyakan kepada ayah, ibu, atau keluargamu: apa saja warisan budaya benda dan tak benda yang ada di daerahmu? Tuliskan minimal 2 contoh untuk masing-masing jenis.
-                </div>
-                <div class="materi-reflect-q" style="margin-top:14px;">🏺 Warisan budaya benda di daerahku:</div>
-                <textarea class="materi-reflect-textarea" placeholder="Contoh: rumah adat, pakaian adat, makanan khas..."></textarea>
-                <div class="materi-reflect-q">🎭 Warisan budaya tak benda di daerahku:</div>
-                <textarea class="materi-reflect-textarea" placeholder="Contoh: tarian, bahasa daerah, adat istiadat..."></textarea>
 
                 <div class="materi-section-title">📂 Dua Jenis Warisan Budaya <span style="font-size:0.7em;font-weight:normal;color:rgba(255,255,255,0.55);">(ketuk untuk membuka)</span></div>
 
@@ -4452,13 +4401,14 @@
                         <span class="materi-accordion-arrow">▼</span>
                     </div>
                     <div class="materi-accordion-body">
-                        Warisan budaya yang bisa <b>dilihat dan diraba</b>.
+                        Warisan budaya yang bisa <b>dilihat dan diraba</b>. Contohnya adalah bangunan bersejarah, pakaian adat, makanan khas, senjata tradisional, alat musik, dan alat-alat produksi yang diwariskan dari generasi ke generasi.
                         <div class="materi-chip-row">
                             <span class="materi-chip">🏠 Bangunan</span>
                             <span class="materi-chip">👘 Pakaian Adat</span>
                             <span class="materi-chip">🍽️ Makanan</span>
                             <span class="materi-chip">🗡️ Senjata Tradisional</span>
                             <span class="materi-chip">🎶 Alat Musik</span>
+                            <span class="materi-chip">⚙️ Alat Produksi</span>
                         </div>
                     </div>
                 </div>
@@ -4480,6 +4430,12 @@
                     </div>
                 </div>
 
+                <div class="materi-section-title">🌐 Akulturasi &amp; Pelestarian Budaya <span style="font-size:0.7em;font-weight:normal;color:rgba(255,255,255,0.55);">(ketuk untuk membuka)</span></div>
+
+                <div class="materi-intro-text" style="margin-bottom:12px; font-size:0.88em; color:rgba(255,255,255,0.82); line-height:1.7;">
+                    Warisan budaya yang ada saat ini banyak yang lahir dari proses <b>akulturasi</b>, yaitu percampuran dua budaya atau lebih yang saling memengaruhi. Karena itulah warisan budaya perlu kita jaga agar tidak rusak atau hilang. Yuk, lihat contoh nyatanya!
+                </div>
+
                 <div class="materi-accordion" id="materi-acc-a3" onclick="toggleMateriAccordion('materi-acc-a3')">
                     <div class="materi-accordion-head">
                         <div class="materi-accordion-head-left">🛕 Contoh Akulturasi: Candi Borobudur</div>
@@ -4496,7 +4452,7 @@
                         <span class="materi-accordion-arrow">▼</span>
                     </div>
                     <div class="materi-accordion-body">
-                        Warisan budaya bisa rusak bahkan hilang jika tidak dijaga. Salah satu caranya adalah <b>pemugaran</b>, seperti yang dilakukan pada Candi Borobudur. Contoh lain adalah upaya melestarikan <b>pencak silat</b>, seni bela diri tradisional Nusantara, melalui pelajaran di sekolah, klub-klub silat, dan kompetisi nasional maupun internasional agar tidak kalah populer dari bela diri negara lain.
+                        Warisan budaya bisa rusak bahkan hilang jika tidak dijaga. Salah satu caranya adalah <b>pemugaran</b>, seperti yang dilakukan pada Candi Borobudur. Contoh lain adalah upaya melestarikan <b>pencak silat</b>, seni bela diri tradisional Nusantara yang kepopulerannya sempat kalah dari karate dan taekwondo. Untuk mengatasinya, pencak silat dimasukkan sebagai pelajaran di sekolah, didirikan berbagai klub silat, dan diadakan lomba tingkat nasional maupun internasional. Bahkan, pencak silat kini muncul di beberapa film internasional sebagai upaya memperkenalkannya kepada dunia.
                     </div>
                 </div>
 
@@ -4527,13 +4483,13 @@
                             <li>Warisan budaya benda berupa warisan budaya yang bisa dilihat dan diraba, seperti gedung, alat musik, dan pakaian adat.</li>
                             <li>Warisan budaya tak benda adalah warisan budaya yang tidak bisa diraba, namun bisa dilihat di sekitar kita, contohnya musik dan tarian.</li>
                             <li>Warisan budaya bisa terbentuk karena adanya akulturasi dari budaya lain yang masuk ke suatu daerah, seperti Candi Borobudur yang mendapat pengaruh budaya Hindu-Buddha India.</li>
-                            <li>Warisan budaya harus dilestarikan agar tidak rusak atau punah, salah satunya melalui pemugaran.</li>
+                            <li>Warisan budaya harus dilestarikan agar tidak rusak atau punah.</li>
+                            <li>Pelestarian warisan budaya dapat dilakukan dengan cara pemugaran dan mempelajari warisan budaya yang ada, seperti pencak silat yang diajarkan di sekolah dan diperlombakan agar tidak hilang.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="materi-section-title">🧠 Uji Pemahaman Topik A</div>
-                <div id="materi-quiz-a"></div>
+
             </div>
         </div>
 
@@ -4545,19 +4501,7 @@
                     <div class="materi-intro-text">
                         Setiap pagi, warga mulai bersiap menjalankan aktivitasnya masing-masing: anak-anak sekolah, ayah dan ibu bekerja atau pergi ke pasar. Itulah saat <b>aktivitas ekonomi</b> mulai bergerak. Aktivitas ekonomi adalah kegiatan yang dilakukan manusia untuk memenuhi kebutuhannya, dan setiap daerah punya bentuk aktivitas ekonomi yang berbeda-beda.
                     </div>
-                    <div class="materi-essential-box">
-                        <b>🎯 Pertanyaan Esensial:</b><br>
-                        1. Apa saja bentuk aktivitas perekonomian di daerahku?<br>
-                        2. Apakah aktivitas perekonomian andalan daerahku?<br>
-                        3. Apa yang bisa dilakukan untuk meningkatkan kondisi perekonomian daerahku?
-                    </div>
                 </div>
-
-                <div class="materi-section-title">🔎 Mari Mencari Tahu: Aktivitas Ekonomi Daerahku</div>
-                <div class="materi-essential-box" style="background:rgba(255,255,255,0.08);">
-                    Amati lingkungan sekitarmu. Aktivitas ekonomi apa saja yang paling banyak kamu temui di daerahmu (misalnya pertanian, perdagangan, jasa, dll), dan apa hasil produksinya?
-                </div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis aktivitas ekonomi & hasil produksi daerahmu di sini..."></textarea>
 
                 <div class="materi-section-title">🌾 Ragam Aktivitas Ekonomi <span style="font-size:0.7em;font-weight:normal;color:rgba(255,255,255,0.55);">(ketuk chip untuk lihat tempatnya)</span></div>
                 <div class="materi-chip-row" id="materi-eco-chips" style="margin-top:0;">
@@ -4588,7 +4532,8 @@
                         <span class="materi-accordion-arrow">▼</span>
                     </div>
                     <div class="materi-accordion-body">
-                        Contoh nyata: kerusakan jalan Trans Kalimantan poros Berau-Bulungan pernah menyebabkan antrean panjang kendaraan, sehingga pasokan gas elpiji, ayam potong, sayuran, dan ikan laut terlambat sampai tujuan dan berdampak pada turunnya penjualan. Ini menunjukkan betapa pentingnya jalan, jembatan, dan bangunan (infrastruktur) bagi kelancaran ekonomi daerah.
+                        <b>Infrastruktur</b> adalah bangunan, jembatan, dan jalan yang memudahkan aktivitas manusia. Infrastruktur yang baik memperlancar distribusi barang antardaerah. Sebaliknya, jika infrastruktur rusak, ekonomi daerah bisa terhambat.<br><br>
+                        <b>Contoh nyata:</b> Kerusakan jalan Trans Kalimantan poros Berau-Bulungan pernah menyebabkan antrean panjang kendaraan, sehingga pasokan gas elpiji, ayam potong, sayuran, dan ikan laut terlambat sampai tujuan dan berdampak pada turunnya penjualan.
                     </div>
                 </div>
                 <div class="materi-accordion" id="materi-acc-b3" onclick="toggleMateriAccordion('materi-acc-b3')">
@@ -4637,8 +4582,7 @@
                     </div>
                 </div>
 
-                <div class="materi-section-title">🧠 Uji Pemahaman Topik B</div>
-                <div id="materi-quiz-b"></div>
+
             </div>
         </div>
 
@@ -4648,21 +4592,9 @@
                 <div class="materi-intro-card">
                     <div class="materi-intro-heading">🌟 Topik C: Wah, Ternyata Daerahku Luar Biasa!</div>
                     <div class="materi-intro-text">
-                        Setiap kota atau daerah memiliki ciri khas masing-masing, entah berupa makanan, barang, ataupun bangunan/tempat. Saat berwisata, kita sering membeli oleh-oleh berupa ciri khas tersebut. Makanan atau barang yang dijadikan oleh-oleh inilah yang disebut <b>produk unggulan daerah</b>.
-                    </div>
-                    <div class="materi-essential-box">
-                        <b>🎯 Pertanyaan Esensial:</b><br>
-                        1. Apa produk unggulan daerahku?<br>
-                        2. Mengapa produk tersebut menjadi unggulan?<br>
-                        3. Bagaimana cara memperkenalkan sebuah produk?
+                        Setiap kota atau daerah memiliki ciri khas masing-masing, baik berupa makanan, barang, maupun bangunan dan tempat wisata. Saat berwisata, kita sering membeli oleh-oleh berupa ciri khas daerah yang dikunjungi. Ciri khas inilah yang disebut <b>produk unggulan daerah</b>. Produk unggulan dikenal masyarakat karena kekhasan rasanya, keunikan barangnya, atau keindahan tempatnya yang sangat mencerminkan karakter daerah tersebut.
                     </div>
                 </div>
-
-                <div class="materi-section-title">🔎 Mari Mencari Tahu: Ciri Khas Daerahku</div>
-                <div class="materi-essential-box" style="background:rgba(255,255,255,0.08);">
-                    Coba tanyakan kepada gurumu atau keluargamu: makanan, barang, atau bangunan/tempat apa yang menjadi ciri khas atau produk unggulan daerahmu?
-                </div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis produk unggulan daerahmu di sini..."></textarea>
 
                 <div class="materi-section-title">🌐 Produk Daerah yang Mendunia <span style="font-size:0.7em;font-weight:normal;color:rgba(255,255,255,0.55);">(ketuk kartu)</span></div>
                 <div class="materi-flip-row">
@@ -4684,6 +4616,10 @@
                 </div>
 
                 <div class="materi-section-title">📋 Komponen Brosur Promosi yang Baik <span style="font-size:0.7em;font-weight:normal;color:rgba(255,255,255,0.55);">(coba centang semua!)</span></div>
+
+                <div class="materi-intro-text" style="margin-bottom:12px; font-size:0.88em; color:rgba(255,255,255,0.82); line-height:1.7;">
+                    Agar produk unggulan daerah dikenal lebih luas, kita perlu <b>mempromosikannya</b>. Salah satu cara promosi yang umum digunakan adalah <b>brosur</b>. Brosur yang baik harus memuat informasi lengkap berikut ini:
+                </div>
                 <div class="materi-checklist" id="materi-checklist-c">
                     <div class="materi-checklist-item" onclick="toggleMateriChecklist(this)"><span class="materi-checklist-box"></span> Gambar produk</div>
                     <div class="materi-checklist-item" onclick="toggleMateriChecklist(this)"><span class="materi-checklist-box"></span> Sejarah singkat produk</div>
@@ -4715,66 +4651,59 @@
                             <li>Ciri khas atau keunggulan tersebut membuat daerah yang memilikinya dikenal masyarakat luas.</li>
                             <li>Meningkatkan kualitas produk akan membuat produk tersebut menjadi produk unggulan.</li>
                             <li>Hasil budaya, keunggulan sumber daya alam, dan produk unggulan daerah dapat diperkenalkan melalui promosi ke berbagai daerah dan negara.</li>
-                            <li>Rendang dan gamelan adalah contoh produk daerah unggulan Indonesia yang dikenal hingga mancanegara.</li>
+                            <li>Rendang, gamelan, dan batik adalah contoh produk daerah unggulan Indonesia yang dikenal hingga mancanegara.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="materi-section-title">🧠 Uji Pemahaman Topik C</div>
-                <div id="materi-quiz-c"></div>
+
             </div>
         </div>
 
-        <!-- ===================== TAB R: REFLEKSI & RANGKUMAN ===================== -->
-        <div class="materi-tab-content" id="materi-tab-r">
+        <!-- ===================== TAB KUIS ===================== -->
+        <div class="materi-tab-content" id="materi-tab-kuis">
             <div class="materi-wrap">
-                <div class="materi-final-card">
-                    <div class="materi-final-score"><span id="materi-final-score-num">0</span>/15</div>
-                    <div class="materi-final-label">Total skor kuis dari ketiga topik</div>
-                    <div class="materi-progress-wrap">
-                        <div class="materi-progress-bar-bg"><div class="materi-progress-bar-fill" id="materi-progress-fill"></div></div>
+                <div id="kuis-start-screen">
+                    <div class="materi-intro-card" style="text-align:center;">
+                        <div class="materi-intro-heading" style="justify-content:center;font-size:1.2em;">🎯 Kuis Daerahku Kebanggaanku</div>
+                        <div class="materi-intro-text" style="margin-top:8px;">Uji pemahamanmu tentang materi Bab 7 IPAS Kelas V! Ada <b>10 soal pilihan ganda</b> yang bisa kamu coba berkali-kali. Semangat! 🌟</div>
                     </div>
-                    <button class="btn-materi-reset" onclick="playSound('x');resetMateriProgress()">🔁 Ulangi Semua Kuis</button>
-                </div>
-
-                <div class="materi-section-title">✅ Rangkuman Keseluruhan Bab 7</div>
-                <div class="materi-accordion open">
-                    <div class="materi-accordion-body" style="display:block;padding-top:14px;">
-                        <ul>
-                            <li>Indonesia terbentang dari Sabang sampai Merauke, dihuni 1.340 suku bangsa di 34 provinsi dengan budaya yang sangat beragam.</li>
-                            <li>Ada dua jenis warisan budaya: warisan budaya benda (bisa dilihat & diraba) dan warisan budaya tak benda (hanya bisa dilihat/dirasakan).</li>
-                            <li>Warisan budaya bisa terbentuk dari akulturasi, seperti Candi Borobudur yang mendapat pengaruh budaya Hindu-Buddha India.</li>
-                            <li>Aktivitas ekonomi adalah kegiatan manusia untuk memenuhi kebutuhan, meliputi pertanian, perkebunan, perikanan, peternakan, perdagangan, jasa, pertambangan, dan perindustrian.</li>
-                            <li>Kondisi perekonomian daerah dipengaruhi oleh geografis, SDA, infrastruktur, teknologi, dan kualitas SDM.</li>
-                            <li>Produk unggulan daerah adalah ciri khas (makanan/barang/tempat) yang membuat suatu daerah dikenal, contohnya rendang dan gamelan yang sudah mendunia.</li>
-                            <li>Setiap orang dapat berperan sebagai pelaku ekonomi dan ikut mempromosikan keunggulan daerahnya agar semakin dikenal luas.</li>
-                        </ul>
+                    <div style="text-align:center;margin-top:20px;">
+                        <button onclick="mulaiKuis()" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#fff;font-weight:bold;font-size:1.05em;padding:13px 36px;border-radius:24px;border:none;cursor:pointer;box-shadow:0 4px 15px rgba(253,160,133,0.4);">🚀 Mulai Kuis</button>
                     </div>
                 </div>
 
-                <div class="materi-section-title">📝 Mari Refleksikan</div>
-                <div class="materi-reflect-q">1. Menurutmu, warisan budaya apa di daerahmu yang paling menarik? Mengapa?</div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis jawabanmu di sini..."></textarea>
+                <div id="kuis-soal-screen" style="display:none;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                        <div id="kuis-progress-label" style="font-size:0.85em;color:rgba(255,255,255,0.7);">Soal 1 / 10</div>
+                        <div id="kuis-skor-label" style="font-size:0.85em;color:#ffe9b3;font-weight:bold;">Skor: 0</div>
+                    </div>
+                    <div id="kuis-progress-bar-wrap" style="background:rgba(255,255,255,0.15);border-radius:10px;height:7px;margin-bottom:20px;overflow:hidden;">
+                        <div id="kuis-progress-bar" style="height:100%;background:linear-gradient(90deg,#f6d365,#fda085);border-radius:10px;transition:width 0.4s;width:10%;"></div>
+                    </div>
+                    <div class="materi-intro-card" id="kuis-soal-card" style="min-height:90px;">
+                        <div class="materi-intro-heading" id="kuis-soal-teks" style="font-size:1em;"></div>
+                    </div>
+                    <div id="kuis-opsi-wrap" style="display:flex;flex-direction:column;gap:10px;margin-top:14px;"></div>
+                    <div id="kuis-feedback" style="display:none;margin-top:14px;padding:12px 16px;border-radius:12px;font-size:0.9em;font-weight:bold;"></div>
+                    <div style="text-align:right;margin-top:14px;">
+                        <button id="kuis-btn-next" onclick="soalBerikutnya()" style="display:none;background:rgba(255,255,255,0.2);color:#fff;font-weight:bold;padding:10px 28px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);cursor:pointer;">Berikutnya ›</button>
+                    </div>
+                </div>
 
-                <div class="materi-reflect-q">2. Apa aktivitas ekonomi yang paling banyak dilakukan di daerahmu?</div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis jawabanmu di sini..."></textarea>
-
-                <div class="materi-reflect-q">3. Apa produk unggulan daerahmu, dan bagaimana cara mempromosikannya supaya makin dikenal?</div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis jawabanmu di sini..."></textarea>
-
-                <div class="materi-section-title">📚 Uji Pemahaman Akhir Bab 7</div>
-                <div class="materi-intro-text" style="margin-bottom:10px;">Coba kerjakan tiga soal berikut, sama seperti pada buku IPAS Kelas V ya!</div>
-
-                <div class="materi-reflect-q">A. Indonesia sebagai Negara Maritim dan Agraris<br><span style="font-weight:normal;">Tuliskan sejarah salah satu budaya daerahmu yang mendapatkan pengaruh dari budaya lain!</span></div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis jawabanmu di sini..."></textarea>
-
-                <div class="materi-reflect-q">B. Kondisi Perekonomian Daerahku<br><span style="font-weight:normal;">1. Tuliskan tiga jenis aktivitas ekonomi yang paling banyak dilakukan di daerahmu!<br>2. Jelaskan mengapa ketiga aktivitas ekonomi tersebut banyak dilakukan di sana!</span></div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis jawabanmu di sini..."></textarea>
-
-                <div class="materi-reflect-q">C. Daerahku yang Luar Biasa!<br><span style="font-weight:normal;">Buatlah mind map produk unggulan daerahmu (di buku tugas), berisi: 1) sumber daya alam bahan bakunya, 2) jenis aktivitas ekonomi yang terlibat, 3) faktor yang memengaruhi keunggulan produk.</span></div>
-                <textarea class="materi-reflect-textarea" placeholder="Tulis ringkasan mind map-mu di sini..."></textarea>
-
-                <button class="btn-materi-reset" style="margin-top:4px;margin-bottom:30px;" onclick="playSound('button');showToast('🎉 Mantap! Teruslah bangga dengan daerahmu sendiri.','success',3000)">✅ Selesai Merefleksikan</button>
+                <div id="kuis-hasil-screen" style="display:none;text-align:center;">
+                    <div class="materi-intro-card" style="text-align:center;">
+                        <div id="kuis-hasil-emoji" style="font-size:3em;margin-bottom:8px;text-align:center;display:block;"></div>
+                        <div class="materi-intro-heading" id="kuis-hasil-judul" style="justify-content:center;font-size:1.2em;text-align:center;display:block;"></div>
+                        <div class="materi-intro-text" id="kuis-hasil-deskripsi" style="margin-top:6px;text-align:center;display:block;"></div>
+                        <div style="margin-top:16px;font-size:2em;font-weight:bold;color:#ffe9b3;text-align:center;display:block;" id="kuis-hasil-skor"></div>
+                    </div>
+                    <div id="kuis-review-wrap" style="margin-top:18px;text-align:left;"></div>
+                    <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                        <button onclick="cobaLagi()" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#fff;font-weight:bold;font-size:1em;padding:12px 30px;border-radius:22px;border:none;cursor:pointer;box-shadow:0 4px 15px rgba(253,160,133,0.35);">🔄 Coba Lagi</button>
+                        <button onclick="lihatReview()" id="kuis-btn-review" style="background:rgba(255,255,255,0.15);color:#fff;font-weight:bold;font-size:1em;padding:12px 30px;border-radius:22px;border:1px solid rgba(255,255,255,0.3);cursor:pointer;">📋 Lihat Pembahasan</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -4999,7 +4928,7 @@
             <div id="tab-statistik" class="profile-panel">
                 <div class="profile-panel-title">📊 Statistik Pemain</div>
                 <div class="profile-stat-card">
-                    <span class="profile-stat-label">🏆 Win Rate</span>
+                    <span class="profile-stat-label">🏆 Persentase Kemenangan</span>
                     <span class="profile-stat-value highlight" id="stat-winrate">0%</span>
                 </div>
                 <div class="profile-stat-card">
@@ -5144,7 +5073,7 @@
             <div id="vtab-statistik" class="visit-panel">
                 <div class="visit-panel-title">📊 Statistik Pemain</div>
                 <div class="profile-stat-card">
-                    <span class="profile-stat-label">🏆 Win Rate</span>
+                    <span class="profile-stat-label">🏆 Persentase Kemenangan</span>
                     <span class="profile-stat-value highlight" id="vp-stat-winrate">0%</span>
                 </div>
                 <div class="profile-stat-card">
@@ -12368,116 +12297,10 @@
         // =============================================
         // MATERI SCREEN ("Daerahku Kebanggaanku" - IPAS Kelas V Bab 7)
         // =============================================
-        const MATERI_QUIZ_DATA = {
-            a: [
-                {
-                    q: '1. Manakah contoh warisan budaya TAK BENDA?',
-                    options: ['Candi', 'Tarian', 'Pakaian adat', 'Alat musik'],
-                    correct: 1,
-                    explain: 'Tarian tidak bisa diraba, hanya bisa dilihat/dirasakan, sehingga termasuk warisan budaya tak benda. Candi, pakaian adat, dan alat musik termasuk warisan budaya benda karena bisa dilihat dan diraba.'
-                },
-                {
-                    q: '2. Apa istilah untuk percampuran dua budaya atau lebih yang saling memengaruhi?',
-                    options: ['Migrasi', 'Akulturasi', 'Globalisasi', 'Modernisasi'],
-                    correct: 1,
-                    explain: 'Akulturasi adalah percampuran dua kebudayaan atau lebih yang saling bertemu dan saling memengaruhi, seperti yang terjadi pada Candi Borobudur.'
-                },
-                {
-                    q: '3. Pada tahun berapa UNESCO menetapkan Candi Borobudur sebagai Situs Warisan Dunia?',
-                    options: ['1907', '1945', '1991', '2003'],
-                    correct: 2,
-                    explain: 'Tahun 1907 adalah saat pemugaran pertama dilakukan, sedangkan UNESCO menetapkan Candi Borobudur sebagai Situs Warisan Dunia pada tahun 1991.'
-                },
-                {
-                    q: '4. Apa upaya yang dilakukan agar pencak silat tidak kalah populer dari bela diri negara lain?',
-                    options: ['Melarang bela diri asing masuk', 'Memasukkannya sebagai pelajaran di sekolah dan mengadakan kompetisi', 'Membiarkannya saja', 'Mengubah namanya menjadi nama asing'],
-                    correct: 1,
-                    explain: 'Pencak silat dilestarikan dengan cara memasukkannya sebagai pelajaran di sekolah, mendirikan klub-klub silat, serta mengadakan kompetisi tingkat nasional maupun internasional.'
-                },
-                {
-                    q: '5. Siapakah yang menemukan Candi Borobudur dalam keadaan rusak parah?',
-                    options: ['Sir Thomas Stamford Raffles', 'Soekarno', 'Marco Polo', 'Cheng Ho'],
-                    correct: 0,
-                    explain: 'Candi Borobudur ditemukan oleh Sir Thomas Stamford Raffles pada abad ke-19 dalam keadaan rusak parah, sebelum akhirnya dipugar pertama kali pada tahun 1907.'
-                }
-            ],
-            b: [
-                {
-                    q: '1. Apa yang dimaksud dengan aktivitas ekonomi?',
-                    options: ['Kegiatan manusia untuk memenuhi kebutuhan', 'Kegiatan bermain bersama teman', 'Kegiatan belajar di sekolah', 'Kegiatan berlibur ke pantai'],
-                    correct: 0,
-                    explain: 'Aktivitas ekonomi adalah kegiatan yang dilakukan manusia untuk memenuhi kebutuhannya, seperti bertani, berdagang, atau bekerja di kantor.'
-                },
-                {
-                    q: '2. Manakah berikut yang BUKAN termasuk faktor pendukung kondisi perekonomian daerah?',
-                    options: ['Infrastruktur', 'Teknologi', 'Sumber Daya Manusia', 'Warna bendera daerah'],
-                    correct: 3,
-                    explain: 'Faktor pendukung kondisi perekonomian daerah meliputi infrastruktur (jalan, jembatan), teknologi, dan kualitas sumber daya manusia, bukan warna bendera daerah.'
-                },
-                {
-                    q: '3. Jika sumber daya alam suatu daerah berlimpah untuk satu jenis barang, apa yang biasanya terjadi?',
-                    options: ['Barang tersebut dihancurkan', 'Barang tersebut didistribusikan ke daerah lain', 'Barang tersebut disimpan saja', 'Produksinya dihentikan'],
-                    correct: 1,
-                    explain: 'Saat sumber daya berlimpah, hasilnya akan didistribusikan ke daerah-daerah lain yang membutuhkan, sehingga bisa menjadi produk unggulan daerah.'
-                },
-                {
-                    q: '4. Apa dampak kerusakan jalan Trans Kalimantan poros Berau-Bulungan bagi perekonomian, menurut berita di buku?',
-                    options: ['Tidak berdampak apa-apa', 'Pasokan gas, ayam, sayur, dan ikan terlambat sampai tujuan sehingga penjualan turun', 'Harga barang menjadi lebih murah', 'Membuat petani lebih untung'],
-                    correct: 1,
-                    explain: 'Kerusakan jalan menyebabkan antrean panjang kendaraan sehingga pasokan barang terhambat dan berdampak pada turunnya penjualan, menunjukkan pentingnya infrastruktur bagi ekonomi daerah.'
-                },
-                {
-                    q: '5. Pelatihan diversifikasi pengolahan ikan oleh Kementerian Kelautan dan Perikanan adalah contoh faktor pendukung ekonomi daerah dari segi apa?',
-                    options: ['Infrastruktur', 'Teknologi', 'Sumber Daya Manusia (SDM)', 'Cuaca'],
-                    correct: 2,
-                    explain: 'Pelatihan bagi nelayan dan pembudidaya ikan bertujuan meningkatkan kualitas sumber daya manusia (SDM), yang sangat membantu meningkatkan kondisi perekonomian suatu daerah.'
-                }
-            ],
-            c: [
-                {
-                    q: '1. Apa sebutan untuk makanan/barang ciri khas suatu daerah yang sering dijadikan oleh-oleh?',
-                    options: ['Produk impor', 'Produk unggulan daerah', 'Barang langka', 'Produk gagal'],
-                    correct: 1,
-                    explain: 'Makanan atau barang ciri khas suatu daerah yang dijadikan oleh-oleh disebut produk unggulan daerah.'
-                },
-                {
-                    q: '2. Makanan khas Minangkabau yang dinobatkan CNN sebagai salah satu makanan terenak di dunia adalah?',
-                    options: ['Sate', 'Rendang', 'Gudeg', 'Pempek'],
-                    correct: 1,
-                    explain: 'Rendang adalah makanan khas Minangkabau yang mendunia lewat wisatawan mancanegara, bahkan dinobatkan CNN sebagai salah satu makanan terenak di dunia.'
-                },
-                {
-                    q: '3. Alat musik tradisional Indonesia yang sudah dipelajari di universitas luar negeri seperti University of Sydney adalah?',
-                    options: ['Gitar', 'Drum', 'Gamelan', 'Biola'],
-                    correct: 2,
-                    explain: 'Gamelan adalah sekumpulan alat musik tradisional Indonesia yang sudah dikenal luas di dunia, bahkan dipelajari di universitas-universitas luar negeri.'
-                },
-                {
-                    q: '4. Manakah yang BUKAN komponen yang sebaiknya ada dalam brosur promosi produk unggulan?',
-                    options: ['Gambar produk', 'Keunggulan produk', 'Testimoni pembeli', 'Nomor rekening pribadi'],
-                    correct: 3,
-                    explain: 'Komponen brosur promosi yang baik meliputi gambar produk, sejarah singkat, informasi bahan baku/lokasi, keunggulan produk, dan testimoni — bukan nomor rekening pribadi.'
-                },
-                {
-                    q: '5. Apa yang dimaksud dengan testimoni?',
-                    options: ['Daftar harga produk', 'Cerita pengalaman dan pendapat orang tentang suatu produk/tempat', 'Surat izin usaha', 'Resep rahasia produk'],
-                    correct: 1,
-                    explain: 'Testimoni adalah cerita pengalaman dan pendapat orang-orang tentang makanan, barang, atau tempat tertentu, yang berguna untuk meyakinkan calon pembeli/pengunjung lain.'
-                }
-            ]
-        };
-        const MATERI_TOTAL_QUESTIONS = 15;
-        let materiState = {};       // contoh: { 'a-0': { correct: true } }
-        let materiInitialized = false;
 
         function showMateriScreen() {
             document.getElementById('materi-screen').style.display = 'block';
             document.body.style.overflow = 'hidden';
-            if (!materiInitialized) {
-                renderMateriQuizzes();
-                materiInitialized = true;
-            }
-            updateMateriScoreDisplay();
         }
 
         function hideMateriScreen() {
@@ -12486,11 +12309,104 @@
         }
 
         function showMateriTab(tab) {
-            ['a', 'b', 'c', 'p', 'r'].forEach(t => {
+            ['a', 'b', 'c', 'p', 'kuis'].forEach(t => {
                 document.getElementById(`materi-tab-btn-${t}`).classList.toggle('active', t === tab);
                 document.getElementById(`materi-tab-${t}`).classList.toggle('active', t === tab);
             });
         }
+
+        // ─── EMOJI → GAMBAR (tab Materi A/B/C) ──────────────────────────────
+        // Mengganti tampilan emoji jadi gambar dari gambar/materi/<nama>.png
+        // bila tersedia. Jika gambar belum diupload ke GitHub (404/gagal load),
+        // otomatis kembali menampilkan emoji aslinya — tidak ada teks yang
+        // diubah, ini murni penggantian tampilan via JavaScript.
+        const MATERI_EMOJI_KE_GAMBAR = {
+            '🏛️': 'gedung_bersejarah', '📂': 'folder', '🏺': 'guci', '🏠': 'rumah',
+            '👘': 'pakaian_adat', '🍽️': 'makanan', '🗡️': 'senjata_tradisional',
+            '🎶': 'alat_musik', '⚙️': 'roda_gigi', '🎭': 'topeng', '🎵': 'nada_musik',
+            '💃': 'tarian', '🗣️': 'bahasa', '🙏': 'doa', '✋': 'tangan',
+            '🌐': 'globe', '🛕': 'candi', '🥋': 'bela_diri', '🔤': 'abjad',
+            '🔄': 'panah_putar', '🛠️': 'perkakas', '🌍': 'bumi', '✅': 'centang',
+            '💼': 'tas_kerja', '🌾': 'padi', '🌱': 'tunas', '🌴': 'pohon_kelapa',
+            '🐟': 'ikan', '🐄': 'sapi', '🛒': 'troli_belanja', '⛏️': 'beliung',
+            '🏭': 'pabrik', '🗺️': 'peta', '📰': 'koran', '🛣️': 'jalan_raya',
+            '🔬': 'mikroskop', '👩\u200d🌾': 'petani_wanita', '🧑\u200d🌾': 'petani',
+            '🌉': 'jembatan', '🌟': 'bintang', '🍛': 'rendang', '🎼': 'gamelan',
+            '🧵': 'batik', '📋': 'papan_klip', '💬': 'testimoni', '📄': 'brosur',
+        };
+
+        function gantiEmojiJadiGambarMateri() {
+            try {
+                // Urutkan key dari yang terpanjang dulu (emoji dgn ZWJ harus dicocokkan utuh)
+                const daftarEmoji = Object.keys(MATERI_EMOJI_KE_GAMBAR).sort((a, b) => b.length - a.length);
+                const regexEmoji = new RegExp(daftarEmoji.map(e =>
+                    e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                ).join('|'), 'g');
+
+                const container = document.querySelector('.materi-wrap')?.parentElement?.parentElement
+                    || document.body;
+                const tabIds = ['materi-tab-a', 'materi-tab-b', 'materi-tab-c'];
+
+                tabIds.forEach(tabId => {
+                    const tabEl = document.getElementById(tabId);
+                    if (!tabEl) return;
+
+                    // Telusuri semua text node di dalam tab ini
+                    const walker = document.createTreeWalker(tabEl, NodeFilter.SHOW_TEXT, null);
+                    const textNodes = [];
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        if (regexEmoji.test(node.nodeValue)) {
+                            regexEmoji.lastIndex = 0;
+                            textNodes.push(node);
+                        }
+                    }
+
+                    textNodes.forEach(textNode => {
+                        const teks = textNode.nodeValue;
+                        regexEmoji.lastIndex = 0;
+                        if (!regexEmoji.test(teks)) return;
+                        regexEmoji.lastIndex = 0;
+
+                        const frag = document.createDocumentFragment();
+                        let lastIndex = 0;
+                        let match;
+                        while ((match = regexEmoji.exec(teks)) !== null) {
+                            const emoji = match[0];
+                            const namaFile = MATERI_EMOJI_KE_GAMBAR[emoji];
+                            if (match.index > lastIndex) {
+                                frag.appendChild(document.createTextNode(teks.slice(lastIndex, match.index)));
+                            }
+                            if (namaFile) {
+                                const img = document.createElement('img');
+                                img.src = `gambar/materi/${namaFile}.png`;
+                                img.alt = emoji;
+                                img.className = 'materi-emoji-img';
+                                img.style.cssText = 'width:1.15em;height:1.15em;vertical-align:-0.2em;object-fit:contain;display:inline-block;';
+                                img.onerror = function() {
+                                    // Gambar belum diupload / gagal dimuat → kembali ke emoji asli
+                                    const span = document.createElement('span');
+                                    span.textContent = emoji;
+                                    this.replaceWith(span);
+                                };
+                                frag.appendChild(img);
+                            } else {
+                                frag.appendChild(document.createTextNode(emoji));
+                            }
+                            lastIndex = match.index + emoji.length;
+                        }
+                        if (lastIndex < teks.length) {
+                            frag.appendChild(document.createTextNode(teks.slice(lastIndex)));
+                        }
+                        textNode.replaceWith(frag);
+                    });
+                });
+            } catch (e) {
+                console.warn('Gagal mengganti emoji materi jadi gambar:', e);
+                // Jika terjadi error apa pun, biarkan emoji asli tetap tampil (tidak ada perubahan)
+            }
+        }
+        document.addEventListener('DOMContentLoaded', gantiEmojiJadiGambarMateri);
 
         function toggleMateriAccordion(id) {
             const el = document.getElementById(id);
@@ -12512,66 +12428,6 @@
                 showToast('🎉 Lengkap! Brosur promosimu sudah punya semua komponen penting.', 'success', 3000);
             }
         }
-
-        function renderMateriQuizzes() {
-            ['a', 'b', 'c'].forEach(topic => {
-                const container = document.getElementById(`materi-quiz-${topic}`);
-                if (!container) return;
-                container.innerHTML = MATERI_QUIZ_DATA[topic].map((item, qIndex) => {
-                    const optionsHtml = item.options.map((opt, oIndex) =>
-                        `<button class="materi-quiz-option" id="materi-opt-${topic}-${qIndex}-${oIndex}" onclick="selectMateriAnswer('${topic}',${qIndex},${oIndex})">${opt}</button>`
-                    ).join('');
-                    return `
-                        <div class="materi-quiz-card">
-                            <div class="materi-quiz-q">${item.q}</div>
-                            <div class="materi-quiz-options" id="materi-opts-${topic}-${qIndex}">${optionsHtml}</div>
-                            <div class="materi-quiz-feedback" id="materi-feedback-${topic}-${qIndex}"></div>
-                        </div>
-                    `;
-                }).join('');
-            });
-        }
-
-        function selectMateriAnswer(topic, qIndex, oIndex) {
-            const key = `${topic}-${qIndex}`;
-            if (materiState[key]) return; // sudah pernah dijawab
-            const item = MATERI_QUIZ_DATA[topic][qIndex];
-            const isCorrect = oIndex === item.correct;
-            materiState[key] = { correct: isCorrect };
-
-            const optsWrap = document.getElementById(`materi-opts-${topic}-${qIndex}`);
-            optsWrap.querySelectorAll('.materi-quiz-option').forEach((btn, idx) => {
-                btn.classList.add('disabled');
-                btn.onclick = null;
-                if (idx === item.correct) btn.classList.add('correct');
-                else if (idx === oIndex && !isCorrect) btn.classList.add('wrong');
-            });
-
-            const feedback = document.getElementById(`materi-feedback-${topic}-${qIndex}`);
-            feedback.classList.add(isCorrect ? 'correct' : 'wrong');
-            feedback.textContent = (isCorrect ? '✅ Benar! ' : '❌ Kurang tepat. ') + item.explain;
-
-            playSound(isCorrect ? 'button' : 'x');
-            updateMateriScoreDisplay();
-        }
-
-        function updateMateriScoreDisplay() {
-            const score = Object.values(materiState).filter(s => s.correct).length;
-            const scoreEl = document.getElementById('materi-score-display');
-            const finalEl = document.getElementById('materi-final-score-num');
-            const fillEl = document.getElementById('materi-progress-fill');
-            if (scoreEl) scoreEl.textContent = score;
-            if (finalEl) finalEl.textContent = score;
-            if (fillEl) fillEl.style.width = `${Math.round((score / MATERI_TOTAL_QUESTIONS) * 100)}%`;
-        }
-
-        function resetMateriProgress() {
-            materiState = {};
-            renderMateriQuizzes();
-            updateMateriScoreDisplay();
-            showToast('🔁 Kuis direset, semangat coba lagi!', 'info', 2500);
-        }
-
 
         // =============================================
         // PROFILE SCREEN
@@ -17029,7 +16885,7 @@ const ACHIEVEMENTS = [
     // RANK MASTER
     {
         id: 'rank_master_1',
-        name: 'Master Peringkat I',
+        name: 'Jago I',
         tier: 1,
         icon: '🦊',
         desc: 'Pemain yang mulai menunjukkan kemampuannya di arena.',
@@ -17041,7 +16897,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'rank_master_2',
-        name: 'Master Peringkat II',
+        name: 'Jago II',
         tier: 2,
         icon: '🐺',
         desc: 'Pemain berbakat yang telah menembus level emas.',
@@ -17053,7 +16909,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'rank_master_3',
-        name: 'Master Peringkat III',
+        name: 'Jago III',
         tier: 3,
         icon: '🐯',
         desc: 'Segelintir pemain yang mampu mencapai tingkat diamond.',
@@ -17065,7 +16921,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'rank_master_4',
-        name: 'Master Peringkat IV',
+        name: 'Jago IV',
         tier: 4,
         icon: '🦁',
         desc: 'Pemain elit yang telah menembus batas tertinggi arena.',
@@ -17077,7 +16933,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'sepuh',
-        name: 'Master Peringkat V',
+        name: 'Jago V',
         icon: '🐲',
         desc: 'Legenda arena. Hanya yang terbaik yang bertahan di puncak.',
         how: 'Raih <strong>Platina MAKS</strong> — rank tertinggi!',
@@ -17097,7 +16953,7 @@ const ACHIEVEMENTS = [
     // KING WINSTREAK
     {
         id: 'king_streak_1',
-        name: 'Raja Kemenangan I',
+        name: 'Alergi Kalah I',
         tier: 1,
         icon: '⚡',
         desc: 'Lima kemenangan beruntun — mulai terasa panas!',
@@ -17106,7 +16962,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'king_streak_2',
-        name: 'Raja Kemenangan II',
+        name: 'Alergi Kalah II',
         tier: 2,
         icon: '🔥',
         desc: 'Sepuluh kemenangan tanpa henti — tidak terbendung!',
@@ -17115,7 +16971,7 @@ const ACHIEVEMENTS = [
     },
     {
         id: 'king_streak_3',
-        name: 'Raja Kemenangan III',
+        name: 'Alergi Kalah III',
         tier: 3,
         icon: '🌟',
         desc: 'Dua puluh kemenangan beruntun — fenomena langka!',
@@ -17205,6 +17061,16 @@ const ACHIEVEMENTS = [
         desc: 'Pemain legendaris. Telah mencapai puncak tertinggi sistem level.',
         how: 'Capai <strong>Level 100</strong>',
         check: (stats) => (stats.playerLevel || 1) >= 100
+    },
+    // KUIS
+    {
+        id: 'pintar',
+        name: 'Pintar',
+        icon: '👨‍🎓',
+        tier: 2,
+        desc: 'Menguasai materi Daerahku Kebanggaanku dengan sempurna.',
+        how: 'Raih skor <strong>sempurna (10/10)</strong> di Kuis Daerahku Kebanggaanku',
+        check: (stats) => (stats.kuisBestScore || 0) >= (stats.kuisBestTotal || 10)
     },
 ];
 
@@ -17408,16 +17274,18 @@ async function _getAchStats() {
     if (!currentUser) return {};
     try {
         const uid = currentUser.uid;
-        const [rankDataSnap, rankMetaSnap, statsSnap, friendSnap] = await Promise.all([
+        const [rankDataSnap, rankMetaSnap, statsSnap, friendSnap, kuisBestSnap] = await Promise.all([
             db.ref(`users/${uid}/rankData`).get(),
             db.ref(`users/${uid}/rank`).get(),
             db.ref(`users/${uid}/stats`).get(),
             db.ref(`users/${uid}/friends`).get(),
+            db.ref(`users/${uid}/kuisBest`).get(),
         ]);
         const rankData = rankDataSnap.exists() ? rankDataSnap.val() : {};
         const rankMeta = rankMetaSnap.exists() ? rankMetaSnap.val() : {};
         const stats    = statsSnap.exists()    ? statsSnap.val()    : {};
         const friendCount = friendSnap.exists() ? Object.keys(friendSnap.val()||{}).length : 0;
+        const kuisBest  = kuisBestSnap.exists() ? kuisBestSnap.val() : {};
         const expSnap = await db.ref(`users/${uid}/playerExp`).get();
         const totalExp = expSnap.exists() ? (expSnap.val() || 0) : 0;
         const { level: playerLevel } = calcLevelFromExp(totalExp);
@@ -17428,6 +17296,8 @@ async function _getAchStats() {
             everTop1Leaderboard: rankMeta.everTop1Leaderboard || false,
             friendCount,
             playerLevel,
+            kuisBestScore:       kuisBest.score || 0,
+            kuisBestTotal:       kuisBest.total || 10,
         };
     } catch(e) { return {}; }
 }
@@ -18771,3 +18641,319 @@ const _achWsPatch = setInterval(() => {
 </script>
 </body>
 </html>
+
+<script>
+// ======================== KUIS DAERAHKU KEBANGGAANKU ========================
+const kuisSoalBank = [
+    {
+        // Soal 1 — opsi D diganti agar tidak membingungkan dengan akulturasi
+        soal:"Apa yang dimaksud dengan akulturasi?",
+        opsi:[
+            "Percampuran dua kebudayaan atau lebih yang saling memengaruhi",
+            "Penolakan budaya asing oleh masyarakat setempat",
+            "Pemugaran bangunan bersejarah agar tidak rusak",
+            "Pemisahan dua kelompok masyarakat yang berbeda budaya"
+        ],
+        jawaban:0,
+        pembahasan:"Akulturasi adalah percampuran dua kebudayaan atau lebih yang saling bertemu dan memengaruhi. Contohnya pengaruh budaya Hindu-Buddha dari India pada pembangunan Candi Borobudur."
+    },
+    {
+        // Soal 2 — aman, tidak ada perubahan
+        soal:"Manakah yang termasuk warisan budaya BENDA?",
+        opsi:[
+            "Tarian daerah",
+            "Bahasa daerah",
+            "Candi Borobudur",
+            "Adat istiadat"
+        ],
+        jawaban:2,
+        pembahasan:"Warisan budaya benda adalah warisan yang bisa kita lihat dan raba, seperti bangunan (Candi Borobudur), pakaian adat, alat musik, dan senjata tradisional."
+    },
+    {
+        // Soal 3 — aman, tidak ada perubahan
+        soal:"Berikut adalah contoh warisan budaya TAK BENDA, kecuali...",
+        opsi:[
+            "Musik tradisional",
+            "Tarian daerah",
+            "Pakaian adat",
+            "Adat istiadat"
+        ],
+        jawaban:2,
+        pembahasan:"Pakaian adat adalah warisan budaya benda karena bisa dilihat dan diraba. Sedangkan musik, tarian, dan adat istiadat adalah warisan budaya tak benda."
+    },
+    {
+        // Soal 4 — opsi A diganti total agar tidak mengarah ke 'warisan budaya' yang ambigu
+        soal:"Rendang, gamelan, dan batik dikenal hingga mancanegara sebagai contoh...",
+        opsi:[
+            "Barang impor yang dijual di pasar modern",
+            "Produk unggulan daerah Indonesia yang mendunia",
+            "Program pemerintah di bidang infrastruktur",
+            "Jenis mata pelajaran baru di sekolah dasar"
+        ],
+        jawaban:1,
+        pembahasan:"Rendang (Minangkabau), gamelan (Jawa), dan batik adalah produk unggulan daerah Indonesia yang dikenal secara internasional. Rendang bahkan dinobatkan sebagai salah satu makanan terenak di dunia versi CNN."
+    },
+    {
+        // Soal 5 — aman, tidak ada perubahan
+        soal:"Apa yang dimaksud dengan produk unggulan daerah?",
+        opsi:[
+            "Produk impor dari luar negeri",
+            "Ciri khas daerah berupa makanan, barang, atau tempat yang mencerminkan karakter daerah",
+            "Produk yang paling mahal di pasaran",
+            "Produk yang hanya bisa dibeli di ibu kota"
+        ],
+        jawaban:1,
+        pembahasan:"Produk unggulan daerah adalah ciri khas suatu daerah berupa makanan, barang, atau tempat wisata yang mencerminkan karakter daerah, dikenal karena kekhasan rasa, keunikan barang, atau keindahan tempatnya."
+    },
+    {
+        // Soal 6 — aman, tidak ada perubahan
+        soal:"Aktivitas ekonomi adalah...",
+        opsi:[
+            "Kegiatan bermain bersama teman di waktu luang",
+            "Kegiatan yang dilakukan manusia untuk memenuhi kebutuhannya",
+            "Kegiatan belajar di sekolah setiap hari",
+            "Kegiatan menjaga kebersihan lingkungan sekitar"
+        ],
+        jawaban:1,
+        pembahasan:"Aktivitas ekonomi adalah kegiatan yang dilakukan manusia untuk memenuhi kebutuhannya, seperti pertanian, perkebunan, perikanan, perdagangan, jasa, dan perindustrian."
+    },
+    {
+        // Soal 7 — opsi B diganti agar tidak ambigu (cuaca sedikit memengaruhi ekonomi)
+        soal:"Faktor utama yang memengaruhi jenis aktivitas perekonomian suatu daerah adalah...",
+        opsi:[
+            "Jumlah sekolah yang ada di daerah tersebut",
+            "Warna bendera dan lambang daerah",
+            "Kondisi geografis dan sumber daya yang dimiliki",
+            "Luas bangunan kantor pemerintah daerah"
+        ],
+        jawaban:2,
+        pembahasan:"Kondisi geografis dan sumber daya yang dimiliki suatu tempat sangat berpengaruh pada jenis aktivitas perekonomian masyarakatnya. Daerah pantai cenderung bermata pencaharian sebagai nelayan, daerah subur sebagai petani, dan sebagainya."
+    },
+    {
+        // Soal 8 — aman, tidak ada perubahan
+        soal:"Candi Borobudur dibangun pada masa...",
+        opsi:[
+            "Kerajaan Sriwijaya",
+            "Kerajaan Majapahit",
+            "Kerajaan Mataram Kuno",
+            "Kerajaan Demak"
+        ],
+        jawaban:2,
+        pembahasan:"Candi Borobudur dibangun pada abad ke-8 pada masa Kerajaan Mataram Kuno. Pada tahun 1991, UNESCO menetapkan Candi Borobudur sebagai Situs Warisan Dunia dari Indonesia."
+    },
+    {
+        // Soal 9 — aman, tidak ada perubahan
+        soal:"Apa yang dimaksud dengan brosur dalam konteks promosi produk daerah?",
+        opsi:[
+            "Papan nama toko yang dipasang di pinggir jalan",
+            "Salah satu media yang digunakan sebagai alat promosi suatu barang atau jasa",
+            "Laporan keuangan tahunan milik daerah",
+            "Sertifikat kualitas produk dari pemerintah"
+        ],
+        jawaban:1,
+        pembahasan:"Brosur adalah salah satu media promosi suatu barang atau jasa. Brosur yang baik memuat gambar produk, sejarah singkat, informasi bahan baku, lokasi, keunggulan produk, dan testimoni pembeli."
+    },
+    {
+        // Soal 10 — aman, tidak ada perubahan
+        soal:"Indonesia dihuni oleh sekitar berapa suku bangsa yang tersebar di berbagai provinsi?",
+        opsi:[
+            "340 suku bangsa",
+            "740 suku bangsa",
+            "1.340 suku bangsa",
+            "2.340 suku bangsa"
+        ],
+        jawaban:2,
+        pembahasan:"Indonesia memiliki wilayah sangat luas (7,81 juta km²) yang dihuni oleh 1.340 suku bangsa yang tersebar di 34 provinsi, lengkap dengan keragaman budayanya."
+    }
+];
+
+let kuisIndeks=0,kuisSkor=0,kuisJawabanUser=[],kuisSoalAktif=[],kuisDijawab=false;
+
+async function initKuis(){
+    if (!currentUser) return;
+    try {
+        const snap = await db.ref(`users/${currentUser.uid}/kuisBest`).get();
+        if (!snap.exists()) return;
+        const best = snap.val();
+        const skor  = best.score || 0;
+        const total = best.total || 10;
+        const pct   = Math.round((skor / total) * 100);
+        let emoji, judul, deskripsi;
+        if(pct>=90){emoji='🏆';judul='Luar Biasa!';deskripsi='Kamu menguasai materi Daerahku Kebanggaanku dengan sangat baik. Pertahankan!';}
+        else if(pct>=70){emoji='🌟';judul='Bagus Sekali!';deskripsi='Pemahamanmu sudah bagus! Coba lagi untuk mendapat nilai sempurna.';}
+        else if(pct>=50){emoji='👍';judul='Cukup Baik!';deskripsi='Kamu sudah paham sebagian materi. Baca lagi tab Budaya, Ekonomi, dan Unggulan ya!';}
+        else{emoji='📚';judul='Semangat Belajar!';deskripsi='Yuk pelajari lagi materi di tab sebelumnya, lalu coba kuis ini lagi. Kamu pasti bisa!';}
+        document.getElementById('kuis-hasil-emoji').textContent = emoji;
+        document.getElementById('kuis-hasil-judul').textContent = judul;
+        document.getElementById('kuis-hasil-deskripsi').textContent = deskripsi;
+        document.getElementById('kuis-hasil-skor').textContent = `${skor} / ${total} (${pct}%)`;
+        document.getElementById('kuis-review-wrap').innerHTML = '';
+        document.getElementById('kuis-review-wrap').style.display = 'none';
+
+        // Restore kuisSoalAktif & kuisJawabanUser dari data tersimpan
+        // supaya tombol "Lihat Pembahasan" bisa berjalan normal
+        if (Array.isArray(best.jawabanUser) && best.jawabanUser.length > 0) {
+            // Susun ulang urutan soal berdasarkan soalIdx yang tersimpan
+            kuisSoalAktif = best.jawabanUser.map(j => kuisSoalBank[j.soalIdx]);
+            kuisJawabanUser = best.jawabanUser.map((j, i) => ({
+                soalIdx: i,           // indeks di kuisSoalAktif (sudah diurutkan ulang)
+                pilihanUser: j.pilihanUser,
+                benar: j.benar
+            }));
+            kuisSkor = skor;
+            document.getElementById('kuis-btn-review').style.display = 'inline-block';
+        } else {
+            // Tidak ada data jawaban tersimpan (percobaan lama sebelum fitur ini)
+            document.getElementById('kuis-btn-review').style.display = 'none';
+        }
+
+        document.getElementById('kuis-start-screen').style.display = 'none';
+        document.getElementById('kuis-soal-screen').style.display = 'none';
+        document.getElementById('kuis-hasil-screen').style.display = 'block';
+    } catch(e) {
+        console.warn('Gagal memuat hasil kuis dari server:', e);
+    }
+}
+
+function acakArr(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function mulaiKuis(){
+    kuisSoalAktif=acakArr(kuisSoalBank);
+    kuisIndeks=0;kuisSkor=0;kuisJawabanUser=[];
+    document.getElementById('kuis-start-screen').style.display='none';
+    document.getElementById('kuis-hasil-screen').style.display='none';
+    document.getElementById('kuis-soal-screen').style.display='block';
+    tampilSoal();
+}
+
+function tampilSoal(){
+    kuisDijawab=false;
+    const s=kuisSoalAktif[kuisIndeks];
+    document.getElementById('kuis-progress-label').textContent=`Soal ${kuisIndeks+1} / ${kuisSoalAktif.length}`;
+    document.getElementById('kuis-skor-label').textContent=`Skor: ${kuisSkor}`;
+    document.getElementById('kuis-progress-bar').style.width=`${((kuisIndeks+1)/kuisSoalAktif.length)*100}%`;
+    document.getElementById('kuis-soal-teks').textContent=s.soal;
+    document.getElementById('kuis-feedback').style.display='none';
+    document.getElementById('kuis-btn-next').style.display='none';
+    const wrap=document.getElementById('kuis-opsi-wrap');
+    wrap.innerHTML='';
+    const idxOpsi=acakArr([0,1,2,3]);
+    s._opsiUrutan=idxOpsi;
+    idxOpsi.forEach((origIdx,ti)=>{
+        const btn=document.createElement('button');
+        btn.textContent=`${String.fromCharCode(65+ti)}. ${s.opsi[origIdx]}`;
+        btn.setAttribute('data-orig',origIdx);
+        btn.style.cssText='width:100%;text-align:left;background:rgba(255,255,255,0.13);color:#fff;padding:11px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);cursor:pointer;font-size:0.88em;line-height:1.5;margin-bottom:0;transition:background 0.2s;';
+        btn.onmouseover=()=>{if(!kuisDijawab)btn.style.background='rgba(255,255,255,0.22)';};
+        btn.onmouseout=()=>{if(!kuisDijawab)btn.style.background='rgba(255,255,255,0.13)';};
+        btn.onclick=()=>pilihJawaban(origIdx,btn);
+        wrap.appendChild(btn);
+    });
+}
+
+function pilihJawaban(origIdx,btn){
+    if(kuisDijawab)return;
+    kuisDijawab=true;
+    const s=kuisSoalAktif[kuisIndeks];
+    const benar=origIdx===s.jawaban;
+    if(benar){ kuisSkor++; playSound('zoomIn'); } else { playSound('x'); }
+    kuisJawabanUser.push({soalIdx:kuisIndeks,pilihanUser:origIdx,benar});
+    const semua=document.getElementById('kuis-opsi-wrap').querySelectorAll('button');
+    semua.forEach(b=>{
+        b.style.cursor='default';
+        const o=parseInt(b.getAttribute('data-orig'));
+        if(o===s.jawaban)b.style.background='rgba(67,233,123,0.35)';
+        else if(o===origIdx&&!benar)b.style.background='rgba(244,67,54,0.35)';
+    });
+    const fb=document.getElementById('kuis-feedback');
+    fb.style.display='block';
+    if(benar){fb.style.background='rgba(67,233,123,0.22)';fb.style.color='#a7f3d0';fb.innerHTML='✅ Benar! '+s.pembahasan;}
+    else{fb.style.background='rgba(244,67,54,0.18)';fb.style.color='#fca5a5';fb.innerHTML='❌ Kurang tepat. '+s.pembahasan;}
+    document.getElementById('kuis-skor-label').textContent=`Skor: ${kuisSkor}`;
+    const bn=document.getElementById('kuis-btn-next');
+    bn.style.display='inline-block';
+    bn.textContent=kuisIndeks<kuisSoalAktif.length-1?'Berikutnya ›':'Lihat Hasil 🎉';
+}
+
+function soalBerikutnya(){
+    kuisIndeks++;
+    if(kuisIndeks<kuisSoalAktif.length)tampilSoal();
+    else tampilHasil();
+}
+
+function tampilHasil(){
+    document.getElementById('kuis-soal-screen').style.display='none';
+    document.getElementById('kuis-hasil-screen').style.display='block';
+    const total=kuisSoalAktif.length,pct=Math.round((kuisSkor/total)*100);
+    let emoji,judul,deskripsi;
+    if(pct>=90){emoji='🏆';judul='Luar Biasa!';deskripsi='Kamu menguasai materi Daerahku Kebanggaanku dengan sangat baik. Pertahankan!';}
+    else if(pct>=70){emoji='🌟';judul='Bagus Sekali!';deskripsi='Pemahamanmu sudah bagus! Coba lagi untuk mendapat nilai sempurna.';}
+    else if(pct>=50){emoji='👍';judul='Cukup Baik!';deskripsi='Kamu sudah paham sebagian materi. Baca lagi tab Budaya, Ekonomi, dan Unggulan ya!';}
+    else{emoji='📚';judul='Semangat Belajar!';deskripsi='Yuk pelajari lagi materi di tab sebelumnya, lalu coba kuis ini lagi. Kamu pasti bisa!';}
+    document.getElementById('kuis-hasil-emoji').textContent=emoji;
+    document.getElementById('kuis-hasil-judul').textContent=judul;
+    document.getElementById('kuis-hasil-deskripsi').textContent=deskripsi;
+    document.getElementById('kuis-hasil-skor').textContent=`${kuisSkor} / ${total} (${pct}%)`;
+    document.getElementById('kuis-review-wrap').innerHTML='';
+    _simpanSkorKuisJikaTerbaik(kuisSkor, total);
+    document.getElementById('kuis-review-wrap').style.display='none';
+    document.getElementById('kuis-btn-review').style.display='inline-block';
+}
+
+// ─── SIMPAN SKOR TERBAIK KUIS (hanya saat kuis BENAR-BENAR selesai) ─────────
+// Dipanggil dari tampilHasil(), yang hanya terpanggil setelah soal terakhir
+// dijawab. Jika user keluar/menutup tab di tengah kuis, fungsi ini TIDAK
+// pernah berjalan — sehingga percobaan yang belum selesai tidak pernah
+// tercatat atau merusak skor terbaik yang sudah ada.
+async function _simpanSkorKuisJikaTerbaik(skorBaru, totalSoal) {
+    if (!currentUser) return;
+    try {
+        const uid = currentUser.uid;
+        const ref = db.ref(`users/${uid}/kuisBest`);
+        const snap = await ref.get();
+        const lama = snap.exists() ? snap.val() : null;
+        const pctBaru = skorBaru / totalSoal;
+        const pctLama = lama ? (lama.score / (lama.total || 10)) : -1;
+        if (!lama || pctBaru > pctLama || (pctBaru === pctLama && !lama.jawabanUser)) {
+            await ref.set({
+                score: skorBaru,
+                total: totalSoal,
+                updatedAt: Date.now(),
+                // Simpan pilihan jawaban user per soal (hanya ikut tersimpan
+                // saat skor ini memang lebih baik dari sebelumnya)
+                jawabanUser: kuisJawabanUser.map(j => ({
+                    soalIdx: j.soalIdx,
+                    pilihanUser: j.pilihanUser,
+                    benar: j.benar
+                }))
+            });
+        }
+        await checkAndNotifyAchievements();
+    } catch (e) {
+        console.warn('Gagal menyimpan skor kuis:', e);
+    }
+}
+
+function cobaLagi(){
+    document.getElementById('kuis-hasil-screen').style.display='none';
+    document.getElementById('kuis-start-screen').style.display='block';
+}
+
+function lihatReview(){
+    const wrap=document.getElementById('kuis-review-wrap');
+    wrap.style.display='block';
+    wrap.innerHTML='<div style="font-weight:bold;color:#ffe9b3;margin-bottom:12px;font-size:0.95em;">📋 Pembahasan Semua Soal:</div>';
+    kuisSoalAktif.forEach((s,i)=>{
+        const ua=kuisJawabanUser[i],benar=ua&&ua.benar;
+        const div=document.createElement('div');
+        div.style.cssText='background:rgba(255,255,255,0.1);border-radius:12px;padding:12px 14px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.15);text-align:left;';
+        div.innerHTML=`<div style="font-size:0.88em;font-weight:bold;color:#fff;margin-bottom:6px;text-align:left;">${i+1}. ${s.soal}</div>`
+            +`<div style="font-size:0.82em;color:${benar?'#a7f3d0':'#fca5a5'};margin-bottom:4px;text-align:left;">${benar?'✅ Jawabanmu benar!':'❌ Jawabanmu kurang tepat'}</div>`
+            +`<div style="font-size:0.82em;color:rgba(255,255,255,0.75);text-align:left;">✔ Jawaban benar: <b>${s.opsi[s.jawaban]}</b></div>`
+            +`<div style="font-size:0.8em;color:rgba(255,255,255,0.6);margin-top:4px;text-align:justify;line-height:1.6;">${s.pembahasan}</div>`;
+        wrap.appendChild(div);
+    });
+    document.getElementById('kuis-btn-review').style.display='none';
+    wrap.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
